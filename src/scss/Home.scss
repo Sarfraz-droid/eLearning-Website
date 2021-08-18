@@ -12,15 +12,33 @@ body{
         display: flex;
         list-style: none;
         li{
-            flex-wrap: nowrap;
+            white-space: nowrap;
             margin-right: 50px;
-            margin-top: 5%;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
     }
     h1{
         margin-left: -10%;
         color: #00A0FA;
         
+    }
+    .nouser{
+        
+        display: flex;
+        flex-wrap: nowrap;
+        .btn{
+            cursor: pointer;
+            vertical-align: middle;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: transparent;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            border: none;
+            font-weight: 600;
+        }
     }
     .Auth{
         vertical-align: middle;
@@ -29,6 +47,35 @@ body{
             
             margin-top: 30%;
             font-size: 1rem;
+        }
+        .user{
+            display: flex;
+            margin-top: 7%;
+            flex-direction: column;
+            margin-right: 2%;
+
+            span{
+                font-weight: 500;
+                
+            }
+            
+            button{
+                margin-top: 2px;
+                background-color: #00A0FA;
+                border: none;
+                font-family: "Raleway";
+                cursor: pointer;
+                font-weight: 600;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                
+                transition: all 0.5s ease-in-out;
+
+            }
+            button:hover{
+                background-color: #056eac;
+            }
         }
     }
 }
@@ -149,5 +196,67 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+.SignUp{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        margin: 0px;
+    }
+    p{
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.411);
+    }
+    form{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input{
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            font-family: "Raleway";
+            font-weight: 600;
+        }   
+        input::placeholder{
+            color: rgba(0, 0, 0, 0.363);
+        }
+
+        button{
+            margin: 15px;
+            padding: 10px 20px;
+            border: none;
+            font-family: "Raleway";
+            font-weight: 600;
+            color: white;
+            border-radius: 25px;
+            box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.199);
+            background-color: #00A0FA;
+        }
+        input:focus{
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+    .google{
+        margin-top: 20px;
+        border: 2px solid #00A0FA;
+        padding: 10px 25px;
+        background-color: transparent;
+        color: #00A0FA;
+        font-family: "Raleway";
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+    .google:hover{
+        background-color: #00A0FA;
+        color: white;
     }
 }
