@@ -1,0 +1,26 @@
+[
+    {
+      "id": "0",
+      "name": "CSS Introduction",
+      "url": "https://youtu.be/D3iEE29ZXRM",
+      "completed": false
+    },
+    {
+      "id": "1",
+      "name": "CSS Classes and Selectors",
+      "url": "https://youtu.be/FHZn6706e3Q",
+      "completed": false
+    },
+    {
+        "id": "2",
+        "name": "CSS Layout and Position",
+        "url": "https://youtu.be/XQaHAAXIVg8",
+        "completed": false
+    },
+    {
+        "id": "3",
+        "name": "Pseudo Classes & Elements",
+        "url": "https://youtu.be/FMu2cKWD90g",
+        "completed": false
+    }
+]

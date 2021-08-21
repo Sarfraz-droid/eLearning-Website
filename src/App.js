@@ -13,6 +13,7 @@ import Home from "./Home";
 import CourseSection from "./CourseSection";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
+import BrowseCourses from "./BrowseCourses";
 
 import firebase from "./firebase";
 
@@ -29,7 +30,7 @@ function App() {
       }
     });
     console.log(user);
-  },[]);
+  });
 
   return (
     <div className="App">
@@ -47,9 +48,16 @@ function App() {
                 <Route path="/SignIn">
                   <SignIn user={user} setUser={setUser}/>
                 </Route>
+                <Route path="/browse-courses">
+                <Navbar user={user} setUser={setUser} />
+                  <BrowseCourses user={user}/>
+                </Route>
+                <Route path="/course/:id">
+                  <CourseSection user={user}/>
+                </Route>
                 <Route path="/">
                   <Navbar user={user} setUser={setUser} />
-                  <Home />
+                  <Home user={user} setUser={setUser} />
                 </Route>
 
             </Switch>

@@ -18,7 +18,7 @@ function CourseList(props) {
             transform: Visible? "scaleX(-1)" : null,
         }
     }
-
+    console.log(props.course)
   return (
     <div>
       <div className="bg" style = {styles.bg}></div>
@@ -27,7 +27,7 @@ function CourseList(props) {
             <img src={Arrow}/>
         </button>
         <ul>
-          {props.Courseinfo.map((courseData, i) => {
+          {props.course.map((courseData, i) => {
             console.log(courseData);
             return (
               <li

@@ -1,0 +1,12 @@
+[
+    {
+        "image" : "https://www.svgrepo.com/show/197982/html.svg",
+        "name" : "HTML Foundational Course",
+        "link" : "HTML"
+    },
+    {
+        "image" : "https://www.svgrepo.com/show/153993/css.svg",
+        "name" : "CSS Foundational Course",
+        "link" : "CSS"
+    }
+]

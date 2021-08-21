@@ -1,42 +1,47 @@
 import React, { useState,useEffect } from "react";
-import {useHistory} from "react-router-dom";
-
+import {useHistory, useParams} from "react-router-dom";
+import firebase from "./firebase";
 import ReactPlayer from "react-player";
 
 
 import CourseList from "./components/CourseSection/CourseList"
 
 
+function CourseSection(props) {
+  const id = useParams();
+  console.log(id);
+  const [Course, setCourse] = useState({});
+  const [url, setUrl] = useState({});
 
-function CourseSection() {
 
+  const fetchItems = () => {
+    const db = firebase.firestore();
+
+    db.collection(props.user.uid).doc(id.id).get().then((doc) => {
+      setCourse(doc.data());
+      console.log(Course);
+      console.log(doc.data());
+      setUrl({
+        id: 0,
+        url: doc.data().course[0].url,
+      })
+    })
+  };
+
+
+  useEffect(() =>{
+    if(props.user != undefined)
+    {
+      console.log(props.user.uid + " " + id.id);
+      fetchItems();
+    }
+      
+    console.log("Course")
+  },[props.user]);
+  
   const history = useHistory();
 
-  const courseData = [
-    {
-      id: "1",
-      name: "Introduction to JavaScript",
-      description:
-        "JavaScript is a programming language that is used to build web applications. This course will introduce you to the basics of JavaScript.",
-      url: "https://www.youtube.com/watch?v=Ia0FSogTRaw",
-      completed: false,
-    },
-    {
-      id: "2",
-      name: "JavaScript for Web Developers",
-      description:
-        "JavaScript is a programming language that is used to build web applications. This course will introduce you to the basics of JavaScript.",
-      url: "https://www.youtube.com/watch?v=ResWVWI333o",
-      completed: false,
-    },
-  ];
 
-  const [Courseinfo, setCourseinfo] = useState(courseData);
-
-  const [url, setUrl] = useState({
-    id: 0,
-    url: Courseinfo[0].url,
-  });
 
 
   return (
@@ -61,12 +66,10 @@ function CourseSection() {
 
             })}
           </ul> */}
-          <CourseList Courseinfo = {Courseinfo} setUrl={setUrl} Url={url} />
+          {Course.course !== undefined? <CourseList course = {Course.course} setUrl={setUrl} Url={url} /> : null}
         </div>
         <div className="course-content">
-          {url !== "" ? <ReactPlayer light width="1000px" height="562.50px" playing={true} controls={true} url={url.url} onStart={() => { courseData[url.id].completed = true
-            setCourseinfo(courseData) 
-            }}/> : null}
+          {url !== "" ? <ReactPlayer light width="1000px" height="562.50px" playing={true} controls={true} url={url.url} /> : null}
         </div>
       </div>
     </div>

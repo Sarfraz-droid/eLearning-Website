@@ -1,0 +1,14 @@
+[
+    {
+      "id": "0",
+      "name": "HTML Introduction",
+      "url": "https://youtu.be/hu-q2zYwEYs",
+      "completed": false
+    },
+    {
+      "id": "1",
+      "name": "HTML Basics",
+      "url": "https://youtu.be/mbeT8mpmtHA",
+      "completed": false
+    }
+]

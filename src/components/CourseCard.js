@@ -1,15 +1,14 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 
-import html from "../images/html-5.png"
 
 function CourseCard(props) {
     const history = useHistory();
     return (
         <div className="course-card">
-            <img src={html}/>
-            <h2>{props.heading}</h2>
-            <button onClick={() => history.push("/CourseSection")}>
+            <img src={props.course.image}/>
+            <h2>{props.course.name}</h2>
+            <button onClick={() => history.push("/course/" + props.course.link)}>
                 Resume
             </button>
         </div>
